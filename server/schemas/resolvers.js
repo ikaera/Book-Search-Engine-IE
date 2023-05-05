@@ -1,27 +1,30 @@
+const { AuthenticationError } = require('apollo-server-express');
 const { Book, User } = require('../models');
 
 const resolvers = {
   Query: {
-    book: async () => {
-      return Book.find({});
-    },
-    users: async (parent, { _id }) => {
-      const params = _id ? { _id } : {};
-      return User.find(params);
+    me: async (parent, args, context) => {
+      return User.find({ _id: context.user._id });
     },
   },
   Mutation: {
-    createUser: async (parent, args) => {
+    addUser: async (parent, args) => {
       const user = await User.create(args);
       return user;
     },
-    createVote: async (parent, { _id, bookNum }) => {
-      const vote = await User.findOneAndUpdate(
-        { _id },
-        { $inc: { [`book${bookNum}_votes`]: 1 } },
-        { new: true },
-      );
-      return vote;
+    async saveBook(parent, args, context) {
+      console.log(context.user);
+      try {
+        const updatedUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { savedBooks: args } },
+          { new: true, runValidators: true },
+        );
+        return updatedUser;
+      } catch (err) {
+        console.log(err);
+        throw new AuthenticationError('Something went wrong');
+      }
     },
   },
 };
