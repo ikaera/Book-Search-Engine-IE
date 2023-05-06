@@ -1,10 +1,16 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { Book, User } = require('../models');
 
+// import sign token function from auth
+const { signToken } = require('../utils/auth');
+
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
-      return User.find({ _id: context.user._id });
+      if (context.user) {
+        return User.find({ _id: context.user._id });
+      }
+      throw new AuthenticationError('User is not logged in!');
     },
   },
   Mutation: {
@@ -27,8 +33,16 @@ const resolvers = {
 
     addUser: async (parent, args) => {
       const user = await User.create(args);
-      return user;
+
+      if (!user) {
+        throw new AuthenticationError(
+          'Something went wrong, User creation failed.',
+        );
+      }
+      const token = signToken(user);
+      return { token, user };
     },
+
     async saveBook(parent, args, context) {
       console.log(context.user);
       try {
