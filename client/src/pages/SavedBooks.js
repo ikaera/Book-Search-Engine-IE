@@ -13,9 +13,14 @@ import { REMOVE_BOOK } from '../utils/mutations';
 import { useMutation, useQuery } from '@apollo/client';
 
 const SavedBooks = () => {
-  const [userData, setUserData] = useState({});
+  // const [userData, setUserData] = useState({});
 
   const [removeBook, { error }] = useMutation(REMOVE_BOOK);
+
+  //
+  const { data, loading } = useQuery(GET_ME);
+
+  const userData = data?.me || {};
 
   // use this to determine if `useEffect()` hook needs to run again
   const userDataLength = Object.keys(userData).length;
@@ -76,7 +81,7 @@ const SavedBooks = () => {
   };
 
   // if data isn't here yet, say so
-  if (!userDataLength) {
+  if (loading) {
     return <h2>LOADING...</h2>;
   }
 
@@ -89,14 +94,14 @@ const SavedBooks = () => {
       </div>
       <Container>
         <h2 className="pt-5">
-          {userData.savedBooks.length
+          {userData?.savedBooks?.length
             ? `Viewing ${userData.savedBooks.length} saved ${
                 userData.savedBooks.length === 1 ? 'book' : 'books'
               }:`
             : 'You have no saved books!'}
         </h2>
         <Row>
-          {userData.savedBooks.map(book => {
+          {userData?.savedBooks?.map(book => {
             return (
               <Col md="4">
                 <Card key={book.bookId} border="dark">
