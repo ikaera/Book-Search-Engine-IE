@@ -21,7 +21,7 @@ export const SAVE_BOOK = gql`
     $bookId: ID!
     $image: String!
     $link: String
-    $authors: [String!]
+    $author: [String!]
   ) {
     _id
     username
