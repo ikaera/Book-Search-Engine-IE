@@ -14,7 +14,8 @@ const typeDefs = gql`
     authors: [String!]
     title: String!
     image: String!
-    link: String!
+    description: String!
+    link: String
   }
 
   type Auth {
@@ -37,7 +38,7 @@ const typeDefs = gql`
       title: String!
       bookId: ID!
       image: String!
-      link: String!
+      link: String
     ): User
 
     removeBook(bookId: ID!): User
