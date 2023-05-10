@@ -6,7 +6,7 @@ import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 
 //
-
+// import { useQuery, useMutation } from '@apollo/react-hooks';
 import { GET_ME } from '../utils/queries';
 import { REMOVE_BOOK } from '../utils/mutations';
 
@@ -24,6 +24,15 @@ const SavedBooks = () => {
 
   // use this to determine if `useEffect()` hook needs to run again
   const userDataLength = Object.keys(userData).length;
+
+  // if (!userData?.username) {
+  //   return (
+  //     <h4>
+  //       You need to be logged in to see this page. Use the navigation links
+  //       above to sign up or log in!
+  //     </h4>
+  //   );
+  // }
 
   // useEffect(() => {
   //   const getUserData = async () => {
