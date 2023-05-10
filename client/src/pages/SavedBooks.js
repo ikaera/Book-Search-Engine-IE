@@ -15,12 +15,15 @@ import { useMutation, useQuery } from '@apollo/client';
 const SavedBooks = () => {
   // const [userData, setUserData] = useState({});
 
+  const { loading, data } = useQuery(GET_ME);
   const [removeBook, { error }] = useMutation(REMOVE_BOOK);
 
   //
-  const { data, loading } = useQuery(GET_ME);
 
+  console.log('data', data);
   const userData = data?.me || {};
+
+  console.log('User Data Saved Book:', userData);
 
   // use this to determine if `useEffect()` hook needs to run again
   const userDataLength = Object.keys(userData).length;
@@ -96,7 +99,7 @@ const SavedBooks = () => {
 
   return (
     <>
-      <div fluid className="text-light bg-dark p-5">
+      <div className="text-light bg-dark p-5">
         <Container>
           <h1>Viewing saved books!</h1>
         </Container>
@@ -105,7 +108,7 @@ const SavedBooks = () => {
         <h2 className="pt-5">
           {userData?.savedBooks?.length
             ? `Viewing ${userData.savedBooks.length} saved ${
-                userData.savedBooks.length === 1 ? 'book' : 'books'
+                userData?.savedBooks?.length === 1 ? 'book' : 'books'
               }:`
             : 'You have no saved books!'}
         </h2>

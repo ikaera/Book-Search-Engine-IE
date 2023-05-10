@@ -64,7 +64,7 @@ const SearchBooks = () => {
     // find the book in `searchedBooks` state by the matching id
     const bookToSave = searchedBooks.find(book => book.bookId === bookId);
 
-    bookToSave.link = '';
+    // bookToSave.link = '';
     console.log(bookToSave);
     // return;
     // get token
@@ -138,8 +138,8 @@ const SearchBooks = () => {
         <Row>
           {searchedBooks.map(book => {
             return (
-              <Col md="4">
-                <Card key={book.bookId} border="dark">
+              <Col key={book.bookId} md="4">
+                <Card border="dark">
                   {book.image ? (
                     <Card.Img
                       src={book.image}
