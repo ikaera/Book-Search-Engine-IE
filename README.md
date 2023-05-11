@@ -31,6 +31,12 @@
 
 <!-- What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running. -->
 
+- Clone GitHub Repo;
+- Open the terminal and type `npm install` or `npm i` to install the dependencies.
+- Enter `npm start` to run backend of the application or open "node server/server.js",
+- Enter `npm develop` to run both back and front end (or start "concurrently \"cd server && npm run watch\" \"cd client && npm start\""),
+- Enter `npm build` to cd client && npm run build.
+
 ### Acceptance Criteria
 
 - GIVEN a book search engine
@@ -65,11 +71,16 @@
 
 ## Features
 
+- [React](https://react.dev/)
 - [GraphQL](https://graphql.org/)
 - [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
 - [React Router](https://reacttraining.com/react-router)
 - [JSON Web Tokens, or JWTs](https://www.npmjs.com/package/jsonwebtoken)
 - [jwt-decode](https://www.npmjs.com/package/jwt-decode)
+- MongoDB
+- Express.js
+- Node.js
+- JavaScript
 
 ## Usage
 
@@ -80,9 +91,9 @@
 - The URL of the GitHub repository:
   - https://github.com/ikaera/Book-Search-Engine-IE
 
-Provide instructions and examples for use. Include screenshots as needed.
-
 <!-- To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax: -->
+
+Screenshot:
 
 ![alt text](/client/assets/21-mern-homework-demo-01.gif)
 
