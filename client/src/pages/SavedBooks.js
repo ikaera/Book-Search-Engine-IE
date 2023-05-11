@@ -15,7 +15,12 @@ import { useMutation, useQuery } from '@apollo/client';
 const SavedBooks = () => {
   // const [userData, setUserData] = useState({});
 
-  const { loading, data } = useQuery(GET_ME);
+  const { loading, data } = useQuery(
+    GET_ME,
+    //   {
+    //   variables: {bookId}
+    // }
+  );
   const [removeBook, { error }] = useMutation(REMOVE_BOOK);
 
   //

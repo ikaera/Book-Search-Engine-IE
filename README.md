@@ -67,13 +67,18 @@ What are the steps required to install your project? Provide a step-by-step desc
 
 ## Usage
 
+- The URL of the functional, deployed application:
+
+  - https://protected-sea-25388.herokuapp.com/
+
+- The URL of the GitHub repository:
+  - https://github.com/ikaera/Book-Search-Engine-IE
+
 Provide instructions and examples for use. Include screenshots as needed.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+<!-- To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax: -->
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+![alt text](/client/assets/21-mern-homework-demo-01.gif)
 
 ## Features
 

@@ -44,7 +44,7 @@ const typeDefs = gql`
 
     saveBook(book: SavedBookInput!): User
 
-    removeBook(bookId: String!): User
+    removeBook(bookId: ID!): User
   }
 `;
 

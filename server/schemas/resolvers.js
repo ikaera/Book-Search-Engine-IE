@@ -8,7 +8,9 @@ const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.find({ _id: context.user._id });
+        const userData = await User.findOne({ _id: context.user._id });
+        console.log(userData);
+        return userData;
       }
       throw new AuthenticationError('User is not logged in!');
     },
