@@ -17,6 +17,20 @@
   - I WANT to search for new books to read,
     - SO THAT I can keep a list of books to purchase.
 
+## Table of Contents (Optional)
+
+<!-- If your README is long, add a table of contents to make it easy for users to find what they need. -->
+
+- [Installation](#installation)
+- [Features](#features)
+- [Usage](#usage)
+- [License](#license)
+<!-- - [Credits](#credits) -->
+
+## Installation
+
+<!-- What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running. -->
+
 ### Acceptance Criteria
 
 - GIVEN a book search engine
@@ -49,19 +63,13 @@
   - WHEN I click on the Logout button
     - THEN I am logged out of the site and presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button
 
-## Table of Contents (Optional)
+## Features
 
-<!-- If your README is long, add a table of contents to make it easy for users to find what they need. -->
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [License](#license)
-<!-- - [Credits](#credits) -->
-
-## Installation
-
-<!-- What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running. -->
+- [GraphQL](https://graphql.org/)
+- [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
+- [React Router](https://reacttraining.com/react-router)
+- [JSON Web Tokens, or JWTs](https://www.npmjs.com/package/jsonwebtoken)
+- [jwt-decode](https://www.npmjs.com/package/jwt-decode)
 
 ## Usage
 
@@ -77,14 +85,6 @@ Provide instructions and examples for use. Include screenshots as needed.
 <!-- To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax: -->
 
 ![alt text](/client/assets/21-mern-homework-demo-01.gif)
-
-## Features
-
-- [GraphQL](https://graphql.org/)
-- [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
-- [React Router](https://reacttraining.com/react-router)
-- [JSON Web Tokens, or JWTs](https://www.npmjs.com/package/jsonwebtoken)
-- [jwt-decode](https://www.npmjs.com/package/jwt-decode)
 
 <!-- If your project has a lot of features, list them here. -->
 
